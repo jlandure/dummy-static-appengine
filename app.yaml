@@ -1,0 +1,14 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: index.html
+  upload: index.html
+# access the static resources in the root director
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
+  
+# gcloud app deploy --version dummy .
